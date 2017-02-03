@@ -17,4 +17,6 @@ travis-ci = { repository = "https://github.com/DarkEld3r/filesystem_time.git" }
 appveyor = { repository = "https://github.com/DarkEld3r/filesystem_time.git" }
 
 [dependencies]
+chrono = "0.2"
+
 # TODO: FIXME: Optional dependencies for chrono and time?
