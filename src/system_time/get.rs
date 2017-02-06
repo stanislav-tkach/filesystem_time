@@ -43,3 +43,17 @@ impl GetSystemTime for Path {
         metadata(self)?.created()
     }
 }
+
+impl GetSystemTime for str {
+    fn last_modification(&self) -> Result<SystemTime> {
+        metadata(self)?.modified()
+    }
+
+    fn last_access(&self) -> Result<SystemTime> {
+        metadata(self)?.accessed()
+    }
+
+    fn creation(&self) -> Result<SystemTime> {
+        metadata(self)?.created()
+    }
+}
