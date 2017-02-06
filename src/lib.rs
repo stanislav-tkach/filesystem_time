@@ -1,15 +1,7 @@
-//! TODO: FIXME.
+//! Get/set file time.
 
-extern crate chrono;
+//extern crate chrono;
 
-pub mod get_time;
-pub mod set_time;
-
-#[cfg(test)]
-mod tests {
-//    use super::?;
-
-    #[test]
-    fn foo() {
-    }
-}
+pub mod system_time;
+pub mod chrono;
+pub mod time;
