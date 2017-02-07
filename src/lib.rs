@@ -7,5 +7,9 @@ extern crate time;
 
 pub mod system_time;
 pub mod timestamp;
+
+#[cfg(feature = "chrono")]
 pub mod chrono;
+
+#[cfg(feature = "time")]
 pub mod time;
