@@ -15,15 +15,15 @@ pub trait SetSystemTime {
 }
 
 impl SetSystemTime for File {
-    fn set_last_modification(&mut self, time: &SystemTime) -> Result<()> {
+    fn set_last_modification(&mut self, _time: &SystemTime) -> Result<()> {
         unimplemented!()
     }
 
-    fn set_last_access(&mut self, time: &SystemTime) -> Result<()> {
+    fn set_last_access(&mut self, _time: &SystemTime) -> Result<()> {
         unimplemented!()
     }
 
-    fn set_creation(&mut self, time: &SystemTime) -> Result<()> {
+    fn set_creation(&mut self, _time: &SystemTime) -> Result<()> {
         unimplemented!()
     }
 }

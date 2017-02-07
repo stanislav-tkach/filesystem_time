@@ -1,7 +1,11 @@
 //! Get/set file time.
 
-//extern crate chrono;
+#[cfg(feature = "chrono")]
+extern crate chrono;
+#[cfg(feature = "time")]
+extern crate time;
 
 pub mod system_time;
+pub mod timestamp;
 pub mod chrono;
 pub mod time;

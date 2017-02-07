@@ -1,6 +1,6 @@
 [package]
 name = "filesystem_time"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Stanislav Tkach <stanislav.tkach@gmail.com>"]
 description = "Get/set file time."
 documentation = "TODO: FIXME: docs.rs"
@@ -10,13 +10,11 @@ readme = "README.md"
 keywords = ["file", "filesystem", "time", "metadata", "filetime"]
 categories = ["filesystem", "date-and-time"]
 license = "MIT"
-license-file = "LICENSE"
 
 [badges]
 travis-ci = { repository = "https://github.com/DarkEld3r/filesystem_time.git" }
 appveyor = { repository = "https://github.com/DarkEld3r/filesystem_time.git" }
 
 [dependencies]
-chrono = "0.2"
-
-# TODO: FIXME: Optional dependencies for chrono and time?
+chrono = { version = "0.3", optional = true }
+time = { version = "0.1", optional = true }
