@@ -5,7 +5,7 @@ use std::path::Path;
 
 /// Provided for consistancy with other traits.
 /// Behaves the same as corresponding `std::fs::Metadata` methods.
-pub trait GetSystemTime {
+pub trait GetTime {
     /// TODO: FIXME.
     fn last_modification(&self) -> Result<SystemTime>;
 
@@ -16,7 +16,7 @@ pub trait GetSystemTime {
     fn creation(&self) -> Result<SystemTime>;
 }
 
-impl GetSystemTime for Metadata {
+impl GetTime for Metadata {
     fn last_modification(&self) -> Result<SystemTime> {
         self.modified()
     }
@@ -30,7 +30,7 @@ impl GetSystemTime for Metadata {
     }
 }
 
-impl GetSystemTime for Path {
+impl GetTime for Path {
     fn last_modification(&self) -> Result<SystemTime> {
         metadata(self)?.modified()
     }
@@ -44,7 +44,7 @@ impl GetSystemTime for Path {
     }
 }
 
-impl GetSystemTime for str {
+impl GetTime for str {
     fn last_modification(&self) -> Result<SystemTime> {
         metadata(self)?.modified()
     }

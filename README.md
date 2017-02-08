@@ -29,8 +29,12 @@ chrono = { version = "0.1", features = ["chrono", "time"] }
 ## Example
 
 ```rust,no_run
-1
+// TODO, FIXME.
 ```
+
+## Testing
+
+Tests should run as `cargo.exe test --features "chrono time"`.
 
 ## License
 

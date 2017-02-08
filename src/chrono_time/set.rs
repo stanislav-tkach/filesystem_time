@@ -1,7 +1,7 @@
 use std::fs::File;
 
 /// TODO: FIXME.
-pub trait SetChronoTime {
+pub trait SetTime {
     /// TODO: FIXME.
     fn set_last_modification(&mut self, time: u32) -> Result<(), ()>;
 
@@ -12,7 +12,7 @@ pub trait SetChronoTime {
     fn set_creation(&mut self, time: u32) -> Result<(), ()>;
 }
 
-impl SetChronoTime for File {
+impl SetTime for File {
     fn set_last_modification(&mut self, _time: u32) -> Result<(), ()> {
         unimplemented!()
     }

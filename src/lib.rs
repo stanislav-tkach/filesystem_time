@@ -9,7 +9,7 @@ pub mod system_time;
 pub mod timestamp;
 
 #[cfg(feature = "chrono")]
-pub mod chrono;
+pub mod chrono_time;
 
 #[cfg(feature = "time")]
-pub mod time;
+pub mod deprecated_time;

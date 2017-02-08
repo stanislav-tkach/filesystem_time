@@ -3,7 +3,7 @@ use std::fs::File;
 use std::time::SystemTime;
 
 /// TODO: FIXME.
-pub trait SetSystemTime {
+pub trait SetTime {
     /// TODO: FIXME.
     fn set_last_modification(&mut self, time: &SystemTime) -> Result<()>;
 
@@ -14,7 +14,7 @@ pub trait SetSystemTime {
     fn set_creation(&mut self, time: &SystemTime) -> Result<()>;
 }
 
-impl SetSystemTime for File {
+impl SetTime for File {
     fn set_last_modification(&mut self, _time: &SystemTime) -> Result<()> {
         unimplemented!()
     }
