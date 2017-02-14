@@ -5,3 +5,5 @@ mod set;
 
 pub use self::get::GetTime;
 pub use self::set::SetTime;
+
+pub type Timestamp = u64;

@@ -1,7 +1,7 @@
 use std::io::Result;
 use std::fs::{Metadata, metadata};
-use std::time::SystemTime;
 use std::path::Path;
+use std::time::SystemTime;
 
 /// Provided for consistancy with other traits.
 /// Behaves the same as corresponding `std::fs::Metadata` methods.
@@ -32,28 +32,28 @@ impl GetTime for Metadata {
 
 impl GetTime for Path {
     fn last_modification(&self) -> Result<SystemTime> {
-        metadata(self)?.modified()
+        metadata(self)?.last_modification()
     }
 
     fn last_access(&self) -> Result<SystemTime> {
-        metadata(self)?.accessed()
+        metadata(self)?.last_access()
     }
 
     fn creation(&self) -> Result<SystemTime> {
-        metadata(self)?.created()
+        metadata(self)?.creation()
     }
 }
 
 impl GetTime for str {
     fn last_modification(&self) -> Result<SystemTime> {
-        metadata(self)?.modified()
+        metadata(self)?.last_modification()
     }
 
     fn last_access(&self) -> Result<SystemTime> {
-        metadata(self)?.accessed()
+        metadata(self)?.last_access()
     }
 
     fn creation(&self) -> Result<SystemTime> {
-        metadata(self)?.created()
+        metadata(self)?.creation()
     }
 }
