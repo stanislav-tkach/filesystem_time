@@ -1,6 +1,6 @@
 use std::fs::Metadata;
 use std::path::Path;
-use std::time::SystemTime;
+use std::time::{SystemTime, SystemTimeError, UNIX_EPOCH, Duration};
 use super::Timestamp;
 
 /// TODO: FIXME.
@@ -57,5 +57,6 @@ impl GetTime for str {
     }
 }
 
-fn convert_time(time: &SystemTime) {
+fn convert_time(time: &SystemTime) -> Result<Duration, SystemTimeError> {
+    time.duration_since(UNIX_EPOCH)
 }
