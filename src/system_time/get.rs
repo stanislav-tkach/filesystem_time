@@ -3,7 +3,7 @@ use std::fs::{Metadata, metadata};
 use std::path::Path;
 use std::time::SystemTime;
 
-/// Provided for consistancy with other traits.
+/// Provided for consistency with other traits.
 /// Behaves the same as corresponding `std::fs::Metadata` methods.
 pub trait GetTime {
     /// TODO: FIXME.

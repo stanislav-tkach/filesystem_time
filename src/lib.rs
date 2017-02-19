@@ -5,6 +5,9 @@ extern crate chrono;
 #[cfg(feature = "time")]
 extern crate time;
 
+#[macro_use]
+extern crate error_chain;
+
 pub mod system_time;
 pub mod timestamp;
 
