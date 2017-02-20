@@ -1,7 +1,8 @@
 //! TODO: FIXME.
 
-use std::convert;
 use std::time::{SystemTime, SystemTimeError, UNIX_EPOCH};
+#[cfg(feature = "try_from")]
+use std::convert::TryFrom;
 
 mod get;
 mod set;
@@ -16,7 +17,7 @@ pub fn to_timestamp(time: SystemTime) -> Result<Timestamp, SystemTimeError> {
 }
 
 #[cfg(feature = "try_from")]
-impl convert::TryFrom<SystemTime> for Timestamp {
+impl TryFrom<SystemTime> for Timestamp {
     type Err = SystemTimeError;
 
     fn try_from(time: SystemTime) -> Result<Self, Self::Err> {
