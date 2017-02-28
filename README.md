@@ -34,7 +34,7 @@ chrono = { version = "0.1", features = ["chrono", "time"] }
 
 ## Testing
 
-Because of optional dependencies full testing should be performed as `cargo.exe test --features "chrono time"`. 
+Because of optional dependencies testing should be performed as `cargo.exe test --features "chrono time"`. 
 
 ## License
 

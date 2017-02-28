@@ -16,18 +16,18 @@ error_chain! {
 /// TODO: FIXME.
 pub trait GetTime {
     /// TODO: FIXME.
-    fn last_modification(&self) -> Result<Timestamp>;
+    fn creation(&self) -> Result<Timestamp>;
 
     /// TODO: FIXME.
     fn last_access(&self) -> Result<Timestamp>;
 
     /// TODO: FIXME.
-    fn creation(&self) -> Result<Timestamp>;
+    fn last_modification(&self) -> Result<Timestamp>;
 }
 
 impl GetTime for Metadata {
-    fn last_modification(&self) -> Result<Timestamp> {
-        let time = to_timestamp(<Self as system_time::GetTime>::last_modification(self)?)?;
+    fn creation(&self) -> Result<Timestamp> {
+        let time = to_timestamp(<Self as system_time::GetTime>::creation(self)?)?;
         Ok(time)
     }
 
@@ -36,36 +36,36 @@ impl GetTime for Metadata {
         Ok(time)
     }
 
-    fn creation(&self) -> Result<Timestamp> {
-        let time = to_timestamp(<Self as system_time::GetTime>::creation(self)?)?;
+    fn last_modification(&self) -> Result<Timestamp> {
+        let time = to_timestamp(<Self as system_time::GetTime>::last_modification(self)?)?;
         Ok(time)
     }
 }
 
 impl GetTime for Path {
-    fn last_modification(&self) -> Result<Timestamp> {
-        metadata(self)?.last_modification()
+    fn creation(&self) -> Result<Timestamp> {
+        metadata(self)?.creation()
     }
 
     fn last_access(&self) -> Result<Timestamp> {
         metadata(self)?.last_access()
     }
 
-    fn creation(&self) -> Result<Timestamp> {
-        metadata(self)?.creation()
+    fn last_modification(&self) -> Result<Timestamp> {
+        metadata(self)?.last_modification()
     }
 }
 
 impl GetTime for str {
-    fn last_modification(&self) -> Result<Timestamp> {
-        metadata(self)?.last_modification()
+    fn creation(&self) -> Result<Timestamp> {
+        metadata(self)?.creation()
     }
 
     fn last_access(&self) -> Result<Timestamp> {
         metadata(self)?.last_access()
     }
 
-    fn creation(&self) -> Result<Timestamp> {
-        metadata(self)?.creation()
+    fn last_modification(&self) -> Result<Timestamp> {
+        metadata(self)?.last_modification()
     }
 }

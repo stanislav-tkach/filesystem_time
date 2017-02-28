@@ -5,17 +5,17 @@ use std::path::Path;
 /// Behaves the same as corresponding `std::fs::Metadata` methods.
 pub trait GetTime {
     /// TODO: FIXME.
-    fn last_modification(&self) -> Result<(), ()>;
+    fn creation(&self) -> Result<(), ()>;
 
     /// TODO: FIXME.
     fn last_access(&self) -> Result<(), ()>;
 
     /// TODO: FIXME.
-    fn creation(&self) -> Result<(), ()>;
+    fn last_modification(&self) -> Result<(), ()>;
 }
 
 impl GetTime for Metadata {
-    fn last_modification(&self) -> Result<(), ()> {
+    fn creation(&self) -> Result<(), ()> {
         unimplemented!()
     }
 
@@ -23,13 +23,13 @@ impl GetTime for Metadata {
         unimplemented!()
     }
 
-    fn creation(&self) -> Result<(), ()> {
+    fn last_modification(&self) -> Result<(), ()> {
         unimplemented!()
     }
 }
 
 impl GetTime for Path {
-    fn last_modification(&self) -> Result<(), ()> {
+    fn creation(&self) -> Result<(), ()> {
         unimplemented!()
     }
 
@@ -37,13 +37,13 @@ impl GetTime for Path {
         unimplemented!()
     }
 
-    fn creation(&self) -> Result<(), ()> {
+    fn last_modification(&self) -> Result<(), ()> {
         unimplemented!()
     }
 }
 
 impl GetTime for str {
-    fn last_modification(&self) -> Result<(), ()> {
+    fn creation(&self) -> Result<(), ()> {
         unimplemented!()
     }
 
@@ -51,7 +51,7 @@ impl GetTime for str {
         unimplemented!()
     }
 
-    fn creation(&self) -> Result<(), ()> {
+    fn last_modification(&self) -> Result<(), ()> {
         unimplemented!()
     }
 }

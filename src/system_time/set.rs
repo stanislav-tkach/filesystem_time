@@ -5,17 +5,17 @@ use std::time::SystemTime;
 /// TODO: FIXME.
 pub trait SetTime {
     /// TODO: FIXME.
-    fn set_last_modification(&mut self, time: &SystemTime) -> Result<()>;
+    fn set_creation(&mut self, time: &SystemTime) -> Result<()>;
 
     /// TODO: FIXME.
     fn set_last_access(&mut self, time: &SystemTime) -> Result<()>;
 
     /// TODO: FIXME.
-    fn set_creation(&mut self, time: &SystemTime) -> Result<()>;
+    fn set_last_modification(&mut self, time: &SystemTime) -> Result<()>;
 }
 
 impl SetTime for File {
-    fn set_last_modification(&mut self, _time: &SystemTime) -> Result<()> {
+    fn set_creation(&mut self, _time: &SystemTime) -> Result<()> {
         unimplemented!()
     }
 
@@ -23,7 +23,7 @@ impl SetTime for File {
         unimplemented!()
     }
 
-    fn set_creation(&mut self, _time: &SystemTime) -> Result<()> {
+    fn set_last_modification(&mut self, _time: &SystemTime) -> Result<()> {
         unimplemented!()
     }
 }
