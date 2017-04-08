@@ -7,6 +7,19 @@ use std::convert::TryFrom;
 mod get;
 mod set;
 
+#[cfg(unix)]
+#[path = "imp/unix.rs"]
+mod imp;
+
+#[cfg(windows)]
+#[path = "imp/windows.rs"]
+mod imp;
+
+#[cfg(target_os = "redox")]
+#[path = "imp/redox.rs"]
+mod imp;
+
+
 pub use self::get::GetTime;
 pub use self::set::SetTime;
 
