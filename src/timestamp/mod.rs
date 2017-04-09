@@ -19,7 +19,6 @@ mod imp;
 #[path = "imp/redox.rs"]
 mod imp;
 
-
 pub use self::get::GetTime;
 pub use self::set::SetTime;
 
